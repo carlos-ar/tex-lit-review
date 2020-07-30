@@ -1,0 +1,54 @@
+%!TEX program = pdflatex
+\documentclass[12pt]{article}
+% --importing files packages
+% for importing multiple files using standalone package
+% https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects#The_standalone_package
+% subpreambles means I need to have each imported file with its own
+% preamble in the file
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import} % to actually import the tex files
+ 
+% my own custom stylepage, so I modify cools things like using custom
+% header and footer page styles using titlesec and titletoc etc.
+\usepackage{custom-lit-style}
+
+
+\begin{document}
+\import{pages/}{intro}
+\import{pages/}{methods}
+\import{pages/}{eqn-test}
+% \import{pages/}{img-test}
+\import{pages/}{table-test}
+\import{pages/}{ref-test}
+\newpage
+\bibliographystyle{apsrev}
+{\sffamily \footnotesize \setstretch{.5}
+\bibliography{bibdesk-refs.bib}
+}
+\end{document}
+
+
+% \newpage
+% \bibliographystyle{nar}
+% {\sffamily \footnotesize \setstretch{.5}
+% \bibliography{bibdesk-refs}
+% }
+
+% % \newpage
+% %\includepdf{./pages/titlePage}
+% \includepdf{./pages/coverPageSigned}
+% \newpage \pagenumbering{roman}
+% \tableofcontents 
+% \newpage \pagenumbering{arabic} \setcounter{page}{1}
+% \import{pages/}{problem}
+% % \newpage
+% \import{pages/}{background}
+% % \newpage
+% \import{pages/}{strategy}
+% % \newpage
+% \import{pages/}{results}
+
+
+% % EXTRA
+% % \import{pages/}{numerics}
+
